@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_forms.css">
+    <style>
+        /* Nouvelle section style */
+        .other-section {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        .other-section h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        #aujourdhui-display {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #calendrier {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #calendrier:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Faire une commande</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.Id_fournisseur.id_for_label }}">Le fournisseur:</label>
+        {{ form.Id_fournisseur }}
+        <br>
+
+        <label for="{{ form.ID_medic.id_for_label }}">Le médicament:</label>
+        {{ form.ID_medic }}
+        <br>
+
+        <label for="{{ form.Date_commande.id_for_label }}">La date de la commande (yyyy-mm-dd):</label>
+        {{ form.Date_commande }}
+        <br>
+        <label for="{{ form.Quantite_commande.id_for_label }}">La quantité:</label>
+        {{ form.Quantite_commande }}
+
+        <button type="submit">Faire la commande</button>
+    </form>
+
+    {% if form.errors %}
+    <div class="error-message">
+        <p>Invalid information! Please check your inputs.</p>
+    </div>
+    {% elif form.is_bound %}
+    <div class="success-message">
+        <p>Commande ajoutée avec succès!</p>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Nouvelle section en dehors du formulaire -->
+<div class="other-section">
+    <h2>Date d'aujourd'hui</h2>
+    <p id="aujourdhui-display"></p>
+
+    <h2>Calendrier</h2>
+    <input type="date" id="calendrier">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = String(today.getMonth() + 1).padStart(2, '0');
+            var day = String(today.getDate()).padStart(2, '0');
+            var formattedDate = year + '-' + month + '-' + day;
+
+            document.getElementById("aujourdhui-display").innerText = formattedDate;
+            document.getElementById("calendrier").value = formattedDate;
+        });
+    </script>
+</div>
+
+</body>
+</html>

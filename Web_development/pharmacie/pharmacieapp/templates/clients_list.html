@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <title>Liste des clients</title>
+</head>
+<body>
+    <h1>Liste des clients</h1>
+    <table id="client-table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Age</th>
+                <th>Numéro de sécurité sociale</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.Nom_client }}</td>
+                <td>{{ client.Prenom_client }}</td>
+                <td>{{ client.Age_Client }}</td>
+                <td>{{ client.Num_sec_social_client }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script>
+    $(document).ready(function() {
+        $('#client-table').DataTable(); // This line will enable sorting for your table
+    });
+</script>

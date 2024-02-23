@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un client</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_forms.css">
+</head>
+<body>
+    <div class=" container">
+    <h1>Ajouter un client</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.Nom_client.id_for_label }}">Nom du client:</label>
+        {{ form.Nom_client }}
+        <br>
+
+        <label for="{{ form.Prenom_client.id_for_label }}">Prénom du client:</label>
+        {{ form.Prenom_client }}
+        <br>
+
+        <label for="{{ form.Age_Client.id_for_label }}">L'âge du client:</label>
+        {{ form.Age_Client }}
+        <br>
+        <label for="{{ form.Num_sec_social_client.id_for_label }}">Numéro de sécurité sociale:</label>
+        {{ form.Num_sec_social_client }}
+        <br>
+        <label for="{{ form.Type_assurance.id_for_label }}">Type d'assurance:</label>
+        {{ form.Type_assurance }}
+        <br>
+        <button type="submit">Ajouter le client</button>
+    </form>
+    </div>
+</body>
+</html>

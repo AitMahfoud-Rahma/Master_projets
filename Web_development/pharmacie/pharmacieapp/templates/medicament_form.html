@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un médicament</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_forms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter un médicament</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{ form.Nom_medic.id_for_label }}">Nom du médicament:</label>
+            {{ form.Nom_medic }}
+
+            <label for="{{ form.Lot_medic.id_for_label }}">Numéro de lot:</label>
+            {{ form.Lot_medic }}
+
+            <label for="{{ form.DCI.id_for_label }}">Dénomination Commune Internationale (DCI):</label>
+            {{ form.DCI }}
+
+            <label for="{{ form.Dosage_medic.id_for_label }}">Dosage:</label>
+            {{ form.Dosage_medic }}
+
+            <label for="{{ form.Prix_médic.id_for_label }}">Prix de vente:</label>
+            {{ form.Prix_médic }}
+
+            <label for="{{ form.Prix_achat.id_for_label }}">Prix d'achat:</label>
+            {{ form.Prix_achat }}
+
+            <label for="{{ form.Forme_medic.id_for_label }}">Forme du médicament:</label>
+            {{ form.Forme_medic }}
+
+            <label for="{{ form.Prémption_medic.id_for_label }}">Date de péremption:</label>
+            {{ form.Prémption_medic }}
+
+            <label for="{{ form.Quantite_medic.id_for_label }}">Quantité en stock:</label>
+            {{ form.Quantite_medic }}
+
+            <button type="submit">Ajouter le médicament</button>
+        </form>
+
+        {% if form.errors %}
+            <div class="error-message">
+                <p>Invalid information! Please check your inputs.</p>
+            </div>
+        {% elif form.is_bound %}
+            <div class="success-message">
+                <p>Médicament ajouté avec succès!</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

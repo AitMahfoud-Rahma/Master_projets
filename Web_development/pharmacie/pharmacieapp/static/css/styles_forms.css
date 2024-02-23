@@ -1,0 +1,75 @@
+body {
+    background-image: url('https://img.freepik.com/photos-gratuite/pilules-vue-dessus_23-2148021477.jpg?w=826&t=st=1701304679~exp=1701305279~hmac=9280ebfbd941ff51c1ea98bf100e06507188294e2a62d1a1070dcb29497e843b');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 90px;
+
+}
+.container {
+    max-width: 750px;
+    width: 90%;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #0e6251;
+    text-shadow: 7px 5px 0 #a3e4d7;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #dedede;
+    padding: 50px;
+    border-radius: 5px;
+    width: 650px;
+    margin: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2184c9;
+}
+
+.error-message, .success-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error-message {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.success-message {
+    background-color: #2ecc71;
+    color: #fff;
+}

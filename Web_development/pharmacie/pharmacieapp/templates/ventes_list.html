@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <title>Liste des ventes</title>
+</head>
+<style>
+body {
+    background-image: url('https://img.freepik.com/photos-gratuite/pilules-vue-dessus_23-2148021477.jpg?w=826&t=st=1701304679~exp=1701305279~hmac=9280ebfbd941ff51c1ea98bf100e06507188294e2a62d1a1070dcb29497e843b');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 90px;
+}
+</style>
+<body>
+    <h1>Liste des ventes</h1>
+
+    <table id="ventes-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Quantité</th>
+                <th>Client</th>
+                <th>Nom de médicament</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vente in ventes %}
+            <tr>
+                <td>{{ vente.Date_vente }}</td>
+                <td>{{ vente.Quantite_vendue }}</td>
+                <td>{{ vente.ID_client.Nom_client }} {{ vente.ID_client.Prenom_client }}</td>
+                <td>{{ vente.ID_medic.Nom_medic }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script>
+    $(document).ready(function() {
+        $('#ventes-table').DataTable(); // This line will enable sorting for your table
+    });
+</script>

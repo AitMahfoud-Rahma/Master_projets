@@ -1,0 +1,36 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base_generic.html' %}
+
+{% block content %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <h1>Register</h1>
+
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+
+        <label for="{{ form.username.id_for_label }}">Username:</label>
+        {{ form.username }}
+
+        <label for="{{ form.password1.id_for_label }}">Password:</label>
+        {{ form.password1 }}
+
+        <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+        {{ form.password2 }}
+
+
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
+</body>
+
+</html>

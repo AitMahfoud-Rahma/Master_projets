@@ -1,0 +1,29 @@
+
+body {
+    background-color:#1c7a73 ;
+    color: #0e6251; /* Couleur du texte de la page homepage */
+    /* Ajoutez d'autres styles selon vos besoins */
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.developer-info {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc transparent */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.google-map {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}

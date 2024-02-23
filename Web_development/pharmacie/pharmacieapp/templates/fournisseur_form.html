@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un fournisseur</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_forms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter un fournisseur</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.Nom_fournisseur.id_for_label }}">Nom du fournisseur:</label>
+                {{ form.Nom_fournisseur }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.Adresse_fournisseur.id_for_label }}">Adresse du fournisseur:</label>
+                {{ form.Adresse_fournisseur }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.Tel_fournisseur.id_for_label }}">Téléphone du fournisseur:</label>
+                {{ form.Tel_fournisseur }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.Mail_fournisseur.id_for_label }}">Mail du fournisseur:</label>
+                {{ form.Mail_fournisseur }}
+            </div>
+
+            <button type="submit">Ajouter le fournisseur</button>
+        </form>
+
+        {% if form.errors %}
+        <div class="error-message">
+            <p>Invalid information! Please check your inputs.</p>
+        </div>
+        {% elif form.is_bound %}
+        <div class="success-message">
+            <p>Fournisseur ajouté avec succès!</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Modifiez votre template HTML -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+
+            <label for="{{ form.password.id_for_label }}">Password:</label>
+            {{ form.password }}
+
+            <button type="submit">Login</button>
+        </form>
+
+        <a href="{% url 'register' %}">Register</a>
+
+        {% if form.errors %}
+            <div class="error-message">
+                <p>Please enter a correct username and password.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

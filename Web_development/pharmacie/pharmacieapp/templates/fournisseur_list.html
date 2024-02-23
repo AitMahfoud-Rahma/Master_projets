@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <title>Liste des fournisseurs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <h1>Liste des fournisseurs</h1>
+    <table id="fournisseurs-table">
+        <thead>
+            <tr>
+                <th>Nom du fournisseur</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fournisseur in fournisseurs %}
+            <tr>
+                <td>{{ fournisseur.Nom_fournisseur }}</td>
+                <td>{{ fournisseur.Adresse_fournisseur }}</td>
+                <td>{{ fournisseur.Tel_fournisseur }}</td>
+                <td>{{ fournisseur.Mail_fournisseur }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('#fournisseurs-table').DataTable();
+        });
+    </script>
+</body>
+</html>

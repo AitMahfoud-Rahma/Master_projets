@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire une vente</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_forms.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Faire une vente</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{ form.ID_medic.id_for_label }}">Le médicament:</label>
+            {{ form.ID_medic }}
+
+            <label for="{{ form.ID_client.id_for_label }}">Le client:</label>
+            {{ form.ID_client }}
+
+            <label for="{{ form.Date_vente.id_for_label }}">La date de la vente (yyyy-mm-dd):</label>
+            {{ form.Date_vente }}
+
+            <label for="{{ form.Quantite_vendue.id_for_label }}">La quantité:</label>
+            {{ form.Quantite_vendue }}
+
+            <button type="submit">Faire la vente</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Médicament</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for medicament in selected_medicaments %}
+                    <tr>
+                        <td>{{ medicament.name }}</td>
+                        <td>{{ medicament.quantity }}</td>
+                        <td>{{ medicament.unit_price }}</td>
+                        <td>{{ medicament.total_price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Total: {{ total_price }}</h3>
+
+        {% if form.errors %}
+            <div class="error-message">
+                <p>Invalid information! Please check your inputs.</p>
+            </div>
+        {% elif form.is_bound %}
+            <div class="success-message">
+                <p>Vente effectuée avec succès!</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

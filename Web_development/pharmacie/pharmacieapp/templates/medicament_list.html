@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Management System</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Liste des Médicaments</h1>
+    </div>
+    <table id="medicament-list">
+        <thead>
+            <tr>
+                <th>Nom de médicament</th>
+                <th>Lot</th>
+                <th>DCI</th>
+                <th>Dosage</th>
+                <th>Prix Médic</th>
+                <th>Prix Achat</th>
+                <th>Forme</th>
+                <th>Date de péremption</th>
+                <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for medicament in medicaments %}
+            <tr>
+                <td>{{ medicament.Nom_medic }}</td>
+                <td>{{ medicament.Lot_medic }}</td>
+                <td>{{ medicament.DCI }}</td>
+                <td>{{ medicament.Dosage_medic }}</td>
+                <td>{{ medicament.Prix_médic }}</td>
+                <td>{{ medicament.Prix_achat }}</td>
+                <td>{{ medicament.Forme_medic }}</td>
+                <td>{{ medicament.Prémption_medic }}</td>
+                <td>{{ medicament.Quantite_medic }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#medicament-list').DataTable(); // This line will enable sorting for your table
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+body {
+    background-image: url('https://img.freepik.com/photos-premium/etagere-pharmacie-pharmacie-interieur-flou-fond-medical_293060-17490.jpg?w=1480');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.view-buttons,
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary,
+.btn-success,
+.btn-warning {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #2471a3;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #229954;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-warning:hover {
+    background-color: #1e5f74;
+}
+/* Add the rest of your existing CSS styles here */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0; /* Ajout pour éviter le débordement du contenu sur les côtés */
+}
+
+
+nav {
+    background-color:     #1c7a73  ;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    color:   blue ;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 60px;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color:   #1c7a73  ;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul ul li {
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+}
+
+.content .banner h1 {
+    color: red;
+    position: relative;
+    z-index: 2;
+
+}
+
+.banner {
+    width: 100%;
+    height: 250px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.content.banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+
+.icons-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0 8px;
+    z-index: 1;
+}
+
+.view-icons,
+.action-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.view-icons a,
+.action-icons a {
+    text-decoration: none;
+    color: #136445;
+    margin: 0 10px;
+}
+
+.view-icons a:hover,
+.action-icons a:hover {
+    color: #80c5b4;
+}
+
+.description-gel {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    width: 800px;
+    height: auto;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #136445;
+    padding: 20px;
+}
+
+.description-gel h2 {
+    color:   #797f7d ;
+}
+
+.description-gel h3 {
+    color:  #acafae ;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    color: #057e73;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #80c5b4;
+}
+
+
+
+.description-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 21px;
+    margin: 2px;
+    width: 70%;
+    bottom: 100px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0);
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+}
+
+.description-section h2 {
+    color: #136445;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.description-section h3 {
+    color: #136445;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.description-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.description-section ul {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.description-section li {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(456, 335, 655, 0.2);
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.content.banner {
+    text-align: center;
+    padding: 20px;
+}
+
+.content.banner h1 {
+    font-weight: bold;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-size: 50px;
+    color: #333;
+    text-shadow: 2px 2px 0 #a3e4d7;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Management System</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-B2Rzg8uNnk56D6t9oCMc79h/Mu2zrIu81/PBCXD6n4ZI91pZRlPnmWuY5mn9FdkYpPDCYF2KZvF3Z63s1yTINQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'medicament_list' %}">💊 Medicaments</a></li>
+            <li><a href="{% url 'fournisseur_list' %}">🚚 Fournisseurs</a></li>
+            <li><a href="{% url 'clients_list' %}">👥 Clients</a></li>
+            <li><a href="{% url 'commandes_list' %}">🛒 Commandes</a></li>
+            <li><a href="{% url 'ventes_list' %}">📦 Ventes</a></li>
+            <li><a href="{% url 'assurances_list' %}">🌐 Assurance</a></li>
+            <li><a href="{% url 'contact' %}">📞 Contact</a></li>
+            <li>
+                <a href="#">➕ Ajouter</a>
+                <ul>
+                    <li><a href="{% url 'create_medicament' %}">💊 Ajouter Medicament</a></li>
+                    <li><a href="{% url 'create_fournisseur' %}">🚚 Ajouter Fournisseur</a></li>
+                    <li><a href="{% url 'create_client' %}">👥 Ajouter Client</a></li>
+                    <li><a href="{% url 'make_order' %}">🛒 Effectuer Commande</a></li>
+                    <li><a href="{% url 'make_vente' %}">📦 Effectuer Vente</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="content banner">
+    <h1>
+        Welcome to the Pharmacy Management System
+    </h1>
+    </div>
+
+        <!-- Description Gel -->
+    <div class="description-gel">
+        <h3>Votre solution complète pour la gestion efficace des données.</h3>
+
+    </div>
+    <div style="margin-top: auto;"></div>
+
+
+    <div class="description-section ">
+    <h2>Le Pharmacy Management System</h2>
+    <p>
+        Une application en ligne destinée au personnel pharmaceutique pour faciliter la gestion des stocks, des ventes, des achats et des fournisseurs de médicaments.
+    </p>
+
+    <h3> Fonctionnalités 🔧</h3>
+    <ul>
+        <li><strong>Gestion des Médicaments:</strong> Ajoutez de nouveaux médicaments avec des détails complets tels que le nom, le prix, la date de péremption, etc.</li>
+        <li><strong>Gestion des Fournisseurs:</strong> Suivez les fournisseurs de médicaments et leurs informations de contact </li>
+        <li><strong>Gestion des Clients:</strong> Enregistrez les informations des clients, y compris les détails de l'assurance le cas échéant.</li>
+        <li><strong>Commandes et Ventes:</strong> Effectuez des commandes et des ventes de médicaments, suivez les quantités, les prix et générez des rapports.</li>
+    </ul>
+
+    <h3> Comment Utiliser ❓ </h3>
+        <ul>
+        <li><strong>Ajouter un Médicament:</strong> Accédez à la page "Ajouter Médicament" pour enregistrer de nouveaux médicaments dans le système.</li>
+        <li><strong>Gérer les Fournisseurs:</strong> Utilisez la page "Fournisseurs" pour voir la liste des fournisseurs et leurs détails.</li>
+        <li><strong>Effectuer une Vente:</strong> Accédez à la page "Effectuer Vente" pour vendre des médicaments, suivre les quantités et calculer les prix.</li>
+        <li><strong>Gérer les Clients:</strong> Explorez la page "Clients" pour voir la liste des clients enregistrés.</li>
+        </ul>
+    </div>
+
+
+ <!-- Pied de page -->
+    <footer>
+        <!-- Options -->
+        <div class="footer-options">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.example.com" target="_blank" rel="noopener noreferrer" title="Partager sur Facebook"><i class="fab fa-facebook-square"></i>🇫 Facebook </a>
+            <a href="https://twitter.com/intent/tweet?url={{ your_page_url }}&text=Pharmacy%20Management%20System" target="_blank" rel="noopener noreferrer" title="Partager sur Twitter"><i class="fab fa-twitter-square"></i>🐦 Twitter </a>
+            <a href="whatsapp://send?text=Pharmacy%20Management%20System%20{{ your_page_url }}" target="_blank" rel="noopener noreferrer" title="Partager sur WhatsApp"><i class="fab fa-whatsapp-square"></i> 📲 WhatsApp </a>
+
+            <a href="javascript:window.print();"><i class="fas fa-print"></i>🖨️ Imprimer </a>
+            <a href="{% url 'contact' %}"><i class="fas fa-envelope"></i>✉️ Contacter </a>
+        </div>
+    <p>&copy; 2023 Pharmacy Management System. Tous droits réservés.</p>
+
+    </footer>
+
+</body>
+
+</html>
+

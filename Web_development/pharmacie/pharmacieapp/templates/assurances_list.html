@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <title>Liste des clients</title>
+</head>
+<body>
+    <h1>Liste des assurances</h1>
+<table id="assurances-table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Type d'assurance</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for assurance in assurances %}
+        <tr>
+            <td>{{ assurance.ID_client.Nom_client }} {{ assurance.ID_client.Prenom_client }}</td>
+            <td>{{ assurance.Type_assurance }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script>
+    $(document).ready(function() {
+        $('#assurances-table').DataTable(); // This line will enable sorting for your table
+    });
+</script>
